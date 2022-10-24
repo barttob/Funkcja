@@ -10,9 +10,12 @@ int main()
     cin >> a;
     cout << "Podaj b: ";
     cin >> b;
-
-    wynik = -b / a;
-    cout << wynik;
+    if(a == 0){
+        cout << "Funkcja stala, wartosc: " << b;
+    } else {
+        wynik = -b / a;
+        cout << "Wynik: " << wynik;
+    }
 
     return 0;
 }

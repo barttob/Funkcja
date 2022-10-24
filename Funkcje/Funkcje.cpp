@@ -5,58 +5,54 @@
 using namespace std;
 
 void f_liniowa_1() {
-    float a, b, wynik;
+    float a, b;
     cout << "Podaj a: ";
     cin >> a;
     cout << "Podaj b: ";
     cin >> b;
-    if (a == 0) {
+    if (a == 0)
         cout << "Funkcja stala, wartosc: " << b;
-    }
-    else {
-        wynik = -b / a;
-        cout << "Wynik: " << wynik;
-    }
+    else 
+        cout << "Wynik: " << b / a;
 }
 
 void f_liniowa_2() {
-    float a, b, c, wynik;
+    float a, b, c;
     cout << "Podaj a: ";
     cin >> a;
     cout << "Podaj b: ";
     cin >> b;
     cout << "Podaj c: ";
     cin >> c;
-    if (a == 0) {
+    if (a == 0) 
         cout << "Funkcja stala, wartosc: " << b;
-    }
-    else if (b == 0) {
+    else if (b == 0) 
         cout << "Funkcja wartosc: 0";
-    }
-    else {
-        wynik = (-c / a) / -b;
-        cout << "Wynik: " << wynik;
-    }
+    else 
+        cout << "Wynik: " << (-c / a) / -b;
 }
 
 void f_kwadratowa() {
-    float a, b, c, wynik, delta;
+    float a, b, c, delta;
     cout << "Podaj a: ";
     cin >> a;
     cout << "Podaj b: ";
     cin >> b;
     cout << "Podaj c: ";
     cin >> c;
-    delta = (b * b) - (4 * a * c);
-    if (delta > 0) {
-        cout << "X1: " << (-b - sqrt(delta)) / (2 * a) << endl;
-        cout << "X2: " << (-b + sqrt(delta)) / (2 * a);
-    }
-    else if (delta == 0)
-        cout << "X: " << (-b) / (2 * a);
-    else
-        cout << "Brak miejsc zerowych";
-    
+    if (a != 0){
+        delta = (b * b) - (4 * a * c);
+        if (delta > 0) {
+            cout << "X1: " << (-b - sqrt(delta)) / (2 * a) << endl;
+            cout << "X2: " << (-b + sqrt(delta)) / (2 * a);
+        }
+        else if (delta == 0)
+            cout << "X: " << (-b) / (2 * a);
+        else
+            cout << "Brak miejsc zerowych";
+    } 
+    else 
+        cout << "a = 0, funkcja liniowa, miejsce zerowe: " << - c / b;
 }
 
 int main()

@@ -55,6 +55,31 @@ void f_kwadratowa() {
         cout << "a = 0, funkcja liniowa, miejsce zerowe: " << - c / b;
 }
 
+void f_kwadratowa_kanoniczna() {
+    float a, b, c, p, q, delta;
+    cout << "Podaj a: ";
+    cin >> a;
+    cout << "Podaj p: ";
+    cin >> p;
+    cout << "Podaj q: ";
+    cin >> q;
+    b = -2 * a * p;
+    c = a * p * p + q;
+    if (a != 0) {
+        delta = (b * b) - (4 * a * c);
+        if (delta > 0) {
+            cout << "X1: " << (-b - sqrt(delta)) / (2 * a) << endl;
+            cout << "X2: " << (-b + sqrt(delta)) / (2 * a);
+        }
+        else if (delta == 0)
+            cout << "X: " << (-b) / (2 * a);
+        else
+            cout << "Brak miejsc zerowych";
+    }
+    else
+        cout << "a = 0, funkcja liniowa, miejsce zerowe: " << -c / b;
+}
+
 int main()
 {
     int opcja;
@@ -64,6 +89,7 @@ int main()
     cout << "1. ax+b=y" << endl;
     cout << "2. Ax+By+C=0" << endl;
     cout << "3. ax2+by+c=0" << endl;
+    cout << "4. a(x-p)2+q=y" << endl;
 
     cin >> opcja;
 
@@ -79,6 +105,10 @@ int main()
 
     case 3:
         f_kwadratowa();
+        break;
+
+    case 4:
+        f_kwadratowa_kanoniczna();
         break;
 
     default:

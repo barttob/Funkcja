@@ -84,7 +84,7 @@ int main()
 {
     int opcja;
     while(true) {
-        cout << "Wybierz opcje: " << endl;
+        cout << endl << "Wybierz opcje: " << endl;
         cout << "   1. ax+b=y" << endl;
         cout << "   2. Ax+By+C=0" << endl;
         cout << "   3. ax2+by+c=0" << endl;
@@ -92,6 +92,7 @@ int main()
         cout << "   5. Koniec" << endl;
 
         cin >> opcja;
+        system("CLS");
 
         switch (opcja)
         {

@@ -1,2 +1,3 @@
 ﻿  Funkcje.cpp
+C:\Users\student_2\Repos\barttob\Funkcja\Funkcje\Funkcje.cpp(43,11): warning C4101: "wynik": lokalna zmienna, do której nie istnieje odwołanie
   Funkcje.vcxproj -> C:\Users\student_2\Repos\barttob\Funkcja\x64\Debug\Funkcje.exe

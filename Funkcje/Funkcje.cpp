@@ -1,6 +1,6 @@
 ﻿#include <iostream>
 #include <cmath>
-
+#include <stdlib.h>
 
 using namespace std;
 
@@ -83,37 +83,41 @@ void f_kwadratowa_kanoniczna() {
 int main()
 {
     int opcja;
-    float wynik;
+    while(true) {
+        cout << "Wybierz opcje: " << endl;
+        cout << "   1. ax+b=y" << endl;
+        cout << "   2. Ax+By+C=0" << endl;
+        cout << "   3. ax2+by+c=0" << endl;
+        cout << "   4. a(x-p)2+q=y" << endl;
+        cout << "   5. Koniec" << endl;
 
-    cout << "Wybierz opcje: " << endl;
-    cout << "1. ax+b=y" << endl;
-    cout << "2. Ax+By+C=0" << endl;
-    cout << "3. ax2+by+c=0" << endl;
-    cout << "4. a(x-p)2+q=y" << endl;
+        cin >> opcja;
 
-    cin >> opcja;
+        switch (opcja)
+        {
+        case 1:
+            f_liniowa_1();
+            break;
 
-    switch (opcja)
-    {
-    case 1:
-        f_liniowa_1();
-        break;
+        case 2:
+            f_liniowa_2();
+            break;
 
-    case 2:
-        f_liniowa_2();
-        break;
+        case 3:
+            f_kwadratowa();
+            break;
 
-    case 3:
-        f_kwadratowa();
-        break;
+        case 4:
+            f_kwadratowa_kanoniczna();
+            break;
 
-    case 4:
-        f_kwadratowa_kanoniczna();
-        break;
+        case 5:
+            return 0;
+            break;
 
-    default:
-        break;
+        default:
+            break;
+        }
     }
-
     return 0;
 }

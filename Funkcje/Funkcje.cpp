@@ -13,7 +13,9 @@ void f_liniowa_1() {
     if (a == 0)
         cout << "Funkcja stala, wartosc: " << b;
     else 
-        cout << "Wynik: " << b / a;
+        cout << "Wynik: " << -b / a;
+    cin.get(); cin.get();
+    system("CLS");
 }
 
 void f_liniowa_2() {
@@ -24,12 +26,14 @@ void f_liniowa_2() {
     cin >> b;
     cout << "Podaj c: ";
     cin >> c;
-    if (a == 0) 
-        cout << "Funkcja stala, wartosc: " << b;
-    else if (b == 0) 
+    if (b == 0)
         cout << "Funkcja wartosc: 0";
+    else if (a == 0)
+        cout << "Funkcja stala, wartosc: " << c / -b;
     else 
-        cout << "Wynik: " << (-c / a) / -b;
+        cout << "Wynik: " << (-(c / -b) / (a / -b));
+    cin.get(); cin.get();
+    system("CLS");
 }
 
 void f_kwadratowa() {
@@ -52,7 +56,9 @@ void f_kwadratowa() {
             cout << "Brak miejsc zerowych";
     } 
     else 
-        cout << "a = 0, funkcja liniowa, miejsce zerowe: " << - c / b;
+        cout << "a = 0, funkcja liniowa, miejsce zerowe: " << -c / b;
+    cin.get(); cin.get();
+    system("CLS");
 }
 
 void f_kwadratowa_kanoniczna() {
@@ -78,17 +84,19 @@ void f_kwadratowa_kanoniczna() {
     }
     else
         cout << "a = 0, funkcja liniowa, miejsce zerowe: " << -c / b;
+    cin.get(); cin.get();
+    system("CLS");
 }
 
 int main()
 {
-    int opcja;
+    char opcja;
     while(true) {
-        cout << endl << "Wybierz opcje: " << endl;
+        cout << "Wybierz opcje: " << endl;
         cout << "   1. ax+b=y" << endl;
         cout << "   2. Ax+By+C=0" << endl;
         cout << "   3. ax2+by+c=0" << endl;
-        cout << "   4. a(x-p)2+q=y" << endl;
+        cout << "   4. a(x-p)^2+q=y" << endl;
         cout << "   5. Koniec" << endl;
 
         cin >> opcja;
@@ -96,23 +104,23 @@ int main()
 
         switch (opcja)
         {
-        case 1:
+        case '1':
             f_liniowa_1();
             break;
 
-        case 2:
+        case '2':
             f_liniowa_2();
             break;
 
-        case 3:
+        case '3':
             f_kwadratowa();
             break;
 
-        case 4:
+        case '4':
             f_kwadratowa_kanoniczna();
             break;
 
-        case 5:
+        case '5':
             return 0;
             break;
 

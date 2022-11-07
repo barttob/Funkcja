@@ -88,16 +88,83 @@ void f_kwadratowa_kanoniczna() {
     system("CLS");
 }
 
+void o_to_ki() {
+    float a, b, c, delta, p, q;
+    cout << "Podaj a: ";
+    cin >> a;
+    cout << "Podaj b: ";
+    cin >> b;
+    cout << "Podaj c: ";
+    cin >> c;
+
+    delta = (b * b) - (4 * a * c);
+    p = -b / (2 * a);
+    q = -delta / (4 * a);
+    cout << "Postac kanoniczna: f(x)=" << a << "(x" << (p < 0 ? "+" : "-") << fabs(p) << ")^2+" << q << endl;
+    
+    if (a != 0) {
+        if (delta > 0) 
+            cout << "Postac iloczynowa: " << "f(x)=" << a << "(x" << 
+                ((-b - sqrt(delta)) / (2 * a) < 0 ? "+" : "-") << fabs((-b - sqrt(delta)) / (2 * a)) << 
+                ")(x" << ((-b + sqrt(delta)) / (2 * a) < 0 ? "+" : "-") << fabs((-b + sqrt(delta)) / (2 * a)) << ")" << endl;
+        else if (delta == 0)
+            cout << "Postac iloczynowa: " << "f(x)=" << a << "(x" << ((-b) / (2 * a) < 0 ? "+" : "-") << fabs((-b) / (2 * a)) << ")^2";
+        else
+            cout << "Brak miejsc zerowych, postac iloczynowa nie istnieje";
+    }
+    else
+        cout << "a = 0, funkcja liniowa";
+
+    cin.get(); cin.get();
+    system("CLS");
+}
+
+void k_to_oi() {
+    float a, b, c, delta, p, q;
+    cout << "Podaj a: ";
+    cin >> a;
+    cout << "Podaj b: ";
+    cin >> b;
+    cout << "Podaj c: ";
+    cin >> c;
+
+    delta = (b * b) - (4 * a * c);
+    p = -b / (2 * a);
+    q = -delta / (4 * a);
+    cout << "Postac kanoniczna: f(x)=" << a << "(x" << (p < 0 ? "+" : "-") << fabs(p) << ")^2+" << q << endl;
+
+    if (a != 0) {
+        if (delta > 0)
+            cout << "Postac iloczynowa: " << "f(x)=" << a << "(x" <<
+            ((-b - sqrt(delta)) / (2 * a) < 0 ? "+" : "-") << fabs((-b - sqrt(delta)) / (2 * a)) <<
+            ")(x" << ((-b + sqrt(delta)) / (2 * a) < 0 ? "+" : "-") << fabs((-b + sqrt(delta)) / (2 * a)) << ")" << endl;
+        else if (delta == 0)
+            cout << "Postac iloczynowa: " << "f(x)=" << a << "(x" << ((-b) / (2 * a) < 0 ? "+" : "-") << fabs((-b) / (2 * a)) << ")^2";
+        else
+            cout << "Brak miejsc zerowych, postac iloczynowa nie istnieje";
+    }
+    else
+        cout << "a = 0, funkcja liniowa";
+
+    cin.get(); cin.get();
+    system("CLS");
+}
+
 int main()
 {
     char opcja;
     while(true) {
         cout << "Wybierz opcje: " << endl;
-        cout << "   1. ax+b=y" << endl;
-        cout << "   2. Ax+By+C=0" << endl;
-        cout << "   3. ax2+by+c=0" << endl;
-        cout << "   4. a(x-p)^2+q=y" << endl;
-        cout << "   5. Koniec" << endl;
+        cout << "   Obliczanie miejsca zerowego: " << endl;
+        cout << "       1. ax+b=y" << endl;
+        cout << "       2. Ax+By+C=0" << endl;
+        cout << "       3. ax2+by+c=0" << endl;
+        cout << "       4. a(x-p)^2+q=y" << endl;
+        cout << "   Zmiana postaci funkcji kwadratowej: " << endl;
+        cout << "       5. ogolna na kanoniczna i iloczynowa" << endl;
+        cout << "       6. kanoniczna na ogolna i ilocyznowa" << endl;
+        cout << "       7. iloczynowa na ogolna i kanonicyna" << endl;
+        cout << endl << "   9. Koniec" << endl;
 
         cin >> opcja;
         system("CLS");
@@ -121,6 +188,14 @@ int main()
             break;
 
         case '5':
+            o_to_ki();
+            break;
+
+        case '6':
+            k_to_oi();
+            break;
+
+        case '9':
             return 0;
             break;
 

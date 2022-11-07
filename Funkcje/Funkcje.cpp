@@ -128,9 +128,10 @@ void k_to_oi() {
     cin >> p;
     cout << "Podaj q: ";
     cin >> q;
-    b = -2 * a * p;
-    c = a * p * p + q;
+
     if (a != 0) {
+        b = -2 * a * p;
+        c = a * p * p + q;
         delta = (b * b) - (4 * a * c);
         cout << "Postac ogolna: f(x)=" << a << "x^2" << (b < 0 ? "-" : "+") << fabs(b) << "x" << (c < 0 ? "-" : "+") << fabs(c) << endl;
 
@@ -143,6 +144,31 @@ void k_to_oi() {
             cout << "Postac iloczynowa: " << "f(x)=" << a << "(x" << ((-b) / (2 * a) < 0 ? "+" : "-") << fabs((-b) / (2 * a)) << ")^2";
         else
             cout << "Brak miejsc zerowych, postac iloczynowa nie istnieje";
+    }
+    else
+        cout << "a = 0, funkcja liniowa";
+
+    cin.get(); cin.get();
+    system("CLS");
+}
+
+void i_to_ok() {
+    float a, x1, x2, b, c, p, q;
+    cout << "Podaj a: ";
+    cin >> a;
+    cout << "Podaj x1: ";
+    cin >> x1;
+    cout << "Podaj x2: ";
+    cin >> x2;
+    
+    if (a != 0) {
+        b = -a * (x1 + x2);
+        c = a * x1 * x2;
+        cout << "Postac ogolna: f(x)=" << a << "x^2" << (b < 0 ? "-" : "+") << fabs(b) << "x" << (c < 0 ? "-" : "+") << fabs(c) << endl;
+
+        p = (x1 + x2) / 2;
+        q = a * (p - x1) * (p - x2);
+        cout << "Postac kanoniczna: f(x)=" << a << "(x" << (p < 0 ? "+" : "-") << fabs(p) << ")^2" << (q < 0 ? "-" : "+") << fabs(q) << endl;
     }
     else
         cout << "a = 0, funkcja liniowa";
@@ -198,7 +224,7 @@ int main()
             k_to_oi();
             break;
 
-        case '6':
+        case '7':
             i_to_ok();
             break;
 

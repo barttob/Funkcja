@@ -97,12 +97,13 @@ void o_to_ki() {
     cout << "Podaj c: ";
     cin >> c;
 
-    delta = (b * b) - (4 * a * c);
-    p = -b / (2 * a);
-    q = -delta / (4 * a);
-    cout << "Postac kanoniczna: f(x)=" << a << "(x" << (p < 0 ? "+" : "-") << fabs(p) << ")^2+" << q << endl;
-    
     if (a != 0) {
+        delta = (b * b) - (4 * a * c);
+        p = -b / (2 * a);
+        q = -delta / (4 * a);
+        cout << "Postac kanoniczna: f(x)=" << a << "(x" << (p < 0 ? "+" : "-") << fabs(p) << ")^2" << (q < 0 ? "-" : "+") << fabs(q) << endl;
+    
+    
         if (delta > 0) 
             cout << "Postac iloczynowa: " << "f(x)=" << a << "(x" << 
                 ((-b - sqrt(delta)) / (2 * a) < 0 ? "+" : "-") << fabs((-b - sqrt(delta)) / (2 * a)) << 
@@ -120,20 +121,20 @@ void o_to_ki() {
 }
 
 void k_to_oi() {
-    float a, b, c, delta, p, q;
+    float a, b, c, p, q, delta;
     cout << "Podaj a: ";
     cin >> a;
-    cout << "Podaj b: ";
-    cin >> b;
-    cout << "Podaj c: ";
-    cin >> c;
-
-    delta = (b * b) - (4 * a * c);
-    p = -b / (2 * a);
-    q = -delta / (4 * a);
-    cout << "Postac kanoniczna: f(x)=" << a << "(x" << (p < 0 ? "+" : "-") << fabs(p) << ")^2+" << q << endl;
-
+    cout << "Podaj p: ";
+    cin >> p;
+    cout << "Podaj q: ";
+    cin >> q;
+    b = -2 * a * p;
+    c = a * p * p + q;
     if (a != 0) {
+        delta = (b * b) - (4 * a * c);
+        cout << "Postac ogolna: f(x)=" << a << "x^2" << (b < 0 ? "-" : "+") << fabs(b) << "x" << (c < 0 ? "-" : "+") << fabs(c) << endl;
+
+    
         if (delta > 0)
             cout << "Postac iloczynowa: " << "f(x)=" << a << "(x" <<
             ((-b - sqrt(delta)) / (2 * a) < 0 ? "+" : "-") << fabs((-b - sqrt(delta)) / (2 * a)) <<
@@ -149,6 +150,8 @@ void k_to_oi() {
     cin.get(); cin.get();
     system("CLS");
 }
+
+
 
 int main()
 {
@@ -193,6 +196,10 @@ int main()
 
         case '6':
             k_to_oi();
+            break;
+
+        case '6':
+            i_to_ok();
             break;
 
         case '9':

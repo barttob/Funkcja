@@ -184,15 +184,15 @@ int main()
     char opcja;
     while(true) {
         cout << "Wybierz opcje: " << endl;
-        cout << "   Obliczanie miejsca zerowego: " << endl;
+        cout << endl << "   Obliczanie miejsca zerowego: " << endl;
         cout << "       1. ax+b=y" << endl;
         cout << "       2. Ax+By+C=0" << endl;
         cout << "       3. ax2+by+c=0" << endl;
         cout << "       4. a(x-p)^2+q=y" << endl;
-        cout << "   Zmiana postaci funkcji kwadratowej: " << endl;
+        cout << endl << "   Zmiana postaci funkcji kwadratowej: " << endl;
         cout << "       5. ogolna na kanoniczna i iloczynowa" << endl;
-        cout << "       6. kanoniczna na ogolna i ilocyznowa" << endl;
-        cout << "       7. iloczynowa na ogolna i kanonicyna" << endl;
+        cout << "       6. kanoniczna na ogolna i iloczynowa" << endl;
+        cout << "       7. iloczynowa na ogolna i kanoniczna" << endl;
         cout << endl << "   9. Koniec" << endl;
 
         cin >> opcja;
